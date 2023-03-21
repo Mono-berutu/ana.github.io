@@ -1,0 +1,140 @@
+<style>
+  *,html{
+    padding: 0%;
+    margin: 0%;
+  }
+  .kepala{
+    width: 100%;
+    height: 100vh;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .leher{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: aqua;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  #timer{
+    display: none;
+  }
+  #timer.kk{
+    display: flex;
+    background-color: orange;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  #int{
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #int p{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px;
+  }
+  #int input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    text-transform: capitalize;
+    box-shadow: 3px 3px 15px #ac4c15,
+                -3px 3px 15px #ac4c15;
+  }
+  #int button{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    text-transform: capitalize;
+  }
+  #int.kas{
+    display: none;
+  }
+  h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="kepala">
+    <div class="leher">
+      <div id="int">
+        <p>Nama kamu siapa?</p>
+        <div>
+          <input type="text">
+          <button>enter</button>
+        </div>
+      </div>
+
+      <div id="timer">
+
+      </div>
+      <div class="lanjut">
+        <h2 class="isi"></h2>
+      </div>
+    </div>
+  </div>
+  <script>
+    const h = document.querySelector('#timer')
+    const z = document.querySelector('input')
+    const btn = document.querySelector('button')
+    const h2 = document.querySelector('h2')
+    const inta = document.querySelector('#int')
+
+    btn.addEventListener('click', function(){
+      inta.classList.toggle('kas')
+      h.classList.toggle('kk')
+      h.innerHTML = 3
+      setTimeout(() => {
+        h.innerHTML--
+      },3000)
+      setTimeout(() => {
+        h.innerHTML--
+      },5000)
+
+      setTimeout(() => {
+        h.classList.remove('kk')
+        h2.innerHTML = "Halo " + z.value + " gimana kabarnya hari ini"
+      },8000)
+      setTimeout(() => {
+        h2.innerHTML = "Semangat ya " + z.value + " Perjalananmu masih panjang"
+      },11000)
+      setTimeout(() => {
+        h2.innerHTML = "Ingat ya " + z.value + " Masih banyak rintangan yang belum kamu lalui 😂😂😂😊🤣👌"
+      },14000)
+    })
+
+  </script>
+</body>
+</html>
